@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Medical Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+        }
+
+        /* Top Nav Styles */
+        nav {
+            width: 100%;
+            background-color: #007bff;
+            padding: 20px 0; /* Increased padding for height */
+            display: flex;
+            justify-content: center; /* Center the content */
+            z-index: 100;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: space-evenly; /* Ensures even spacing between navbar links */
+            width: 100%;
+        }
+
+        nav a {
+            color: white;
+            font-size: 1rem;
+            padding: 12px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+            text-align: center; /* Ensures text within the link is centered */
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            margin-top: 100px; /* Adjusted to give space under the fixed navbar */
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-control-file {
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .form-control-file:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a href="http://127.0.0.1:5000/">Home</a>
+            <a href="http://127.0.0.1:5000/invoices">Invoices</a>
+            <a href="http://127.0.0.1:5000/medical">Medical Reports</a>
+            <a href="http://127.0.0.1:5000/chatbot">Chatbot</a>
+            <a href="http://127.0.0.1:5000/medical-chat">MChat</a>
+            <a href="http://127.0.0.1:5000/real">Query</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Upload Medical Document</h2>
+        <form action="/medical" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Select PDF File</label>
+                <input type="file" class="form-control-file" id="file" name="file" accept=".pdf" required>
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+        <div class="footer">
+            <p>Only PDF files are allowed.</p>
+        </div>
+    </div>
+
+    <!-- Scripts for Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
