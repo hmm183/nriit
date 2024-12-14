@@ -172,7 +172,7 @@ langchain-text-splitters==0.3.2
 langcodes==3.4.1
 langsmith==0.2.3
 language_data==1.2.0
-lxml==4.8.0
+lxml==4.8.0 --only-binary :all:
 marisa-trie==1.2.1
 markdown-it-py==3.0.0
 MarkupSafe==2.1.2
