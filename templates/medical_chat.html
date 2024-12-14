@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Chat</title>
+    <style>
+        /* Reset default margins */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #333;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 0.5rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #74ebd5;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            color: #74ebd5;
+        }
+
+        /* Page content styling */
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+            color: #333;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            background-color: #74ebd5;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4ba8c6;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Medical Chat</div>
+        <div>
+            <a href="http://127.0.0.1:5000/">Home</a>
+            <a href="http://127.0.0.1:5000/invoices">Invoices</a>
+            <a href="http://127.0.0.1:5000/medical">Medical Reports</a>
+            <a href="http://127.0.0.1:5000/chatbot">Chatbot</a>
+            <a href="http://127.0.0.1:5000/medical-chat">MChat</a>
+            <a href="http://127.0.0.1:5000/real">Query</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <h1>Medical Chat</h1>
+    <form method="POST" action="/medical-chat">
+        <label for="user_name">Enter your name:</label>
+        <input type="text" id="user_name" name="user_name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if response_text %}
+        <h2>Response</h2>
+        <p>{{ response_text }}</p>
+    {% endif %}
+</body>
+</html>
